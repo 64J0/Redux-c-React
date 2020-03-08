@@ -4,7 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 function CourseList() {
   const [title, setTitle] = useState();
 
-  const courses = useSelector(state => state.data);
+  const qty = 2;
+
+  // Semelhante ao useEffect
+  const courses = useSelector(
+    state => state.data,
+    [qty]
+  );
   const dispatch = useDispatch();
 
   function addCourse() {
